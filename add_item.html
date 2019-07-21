@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--         <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/supersized.css"> -->
+        <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.7-dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+        <style type="text/css">
+            .form-control{
+                margin-top: 10px;
+                height: 60px;
+                font-size: 30px;
+            }
+            button{
+
+                margin: 10px;
+                font-size: 30px;
+                width: 100%;
+            }
+            .btn{
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body >
+        <div class="container">
+            <div class="row">
+                <h1 style="text-align:center;">添加新配件信息</h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-3"><h1>配件编号</h1></div>
+                <div class="col-xs-6"><input type="text" id="type" class="form-control" placeholder="请输入配件编号" maxlength="20" value=""></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-3"><h1>配件名称</h1></div>
+                <div class="col-xs-6"><input type="text" id="name" class="form-control" placeholder="请输入配件名称" maxlength="30" value=""></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-3"><h1>配件价格</h1></div>
+                <div class="col-xs-6"><input type="text" id="price" class="form-control" placeholder="请输入配件价格(元)" maxlength="15" value=""></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-3"><h1>配件商家</h1></div>
+                <div class="col-xs-6"><input type="text" id="firm" class="form-control" placeholder="请输入配件商家" maxlength="15" value=""></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-3"><h1>配件产地</h1></div>
+                <div class="col-xs-6"><input type="text" id="place" class="form-control" placeholder="请输入配件产地" maxlength="15" value=""></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-3"><h1>配件备注信息</h1></div>
+                <div class="col-xs-6"><input type="textarea" id="remarks" class="form-control" placeholder="请输入配件备注信息" maxlength="255" value=""></div>
+            </div>     
+            <div class="row">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-6"><button  class="btn btn-success btn-lg btn-block" onClick="submit_add()"><h1>录入</h1></button></div>
+            </div>      
+            <div class="row">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-6"><button  class="btn btn-danger btn-lg btn-block" onClick="cancel()"><h1>取消</h1></button></div>
+            </div>            
+                <!-- <textarea></textarea> -->
+<!--                     <select id="institute">
+                    <option value="1">船舶与海洋工程学院党委</option>
+                    <option value="2">海洋科学与技术学院党委</option>
+                    <option value="3">汽车工程学院党委</option>
+                    <option value="4">信息与电气工程学院党委</option>
+                    <option value="5">计算机科学与技术学院党委</option>
+                    <option value="6">材料科学与工程学院党委</option>
+                    <option value="7">理学土木党委</option>
+                    <option value="8">经济管理学院党委</option>
+                    <option value="9">语言文学学院党总支</option>
+                    <option value="10">后勤保卫处党总支</option>
+                    <option value="11">思想政治理论教学部党支部</option>
+                    <option value="12">体育教学部党支部</option>
+                    <option value="13">离退休党支部</option>
+                    <option value="14">继续教育学院党支部</option>
+                    <option value="15">校部机关党委</option>
+                </select> -->
+
+                
+                
+        </div>
+        <!-- Javascript -->
+        <script src="javascripts/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="assets/layer-v3.1.1/layer/layer.js"></script>
+
+<!--         // <script src="assets/js/supersized.3.2.7.min.js"></script>
+        // <script src="assets/js/supersized-init.js"></script> -->
+        
+		<!-- // <script src="javascripts/login.js"></script> -->
+    </body>
+</html>
+
+<!-- <script type="text/javascript" src="assets/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script> -->
+<script type="text/javascript">
+var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+
+function submit_add()
+{
+    var ajaxUrl="addUserOk.php";
+    var name=document.getElementById("name").value;
+    var type=document.getElementById("type").value;
+    console.log("***************sinstitute_value***************");   
+    // var sinstitute = document.getElementById("institute"); //定位id
+    // var sinstitute_index= sinstitute.selectedIndex; // 选中索引
+    var price = document.getElementById('price').value;
+    var firm = document.getElementById('firm').value;
+    var place = document.getElementById('place').value;
+    var remarks = document.getElementById('remarks').value;
+    //var sinstitute_text = sinstitute.options[sinstitute_index].text; // 选中文本
+    // var sinstitute_value = sinstitute.options[sinstitute_index].value; // 选中值
+    console.log(price);
+    console.log(name);
+    console.log(type);
+    console.log(remarks)
+    if(name==""||type==""||price==""){
+        alert("请输入编号、名称、价格！");
+        return;
+    }
+    $.ajax({
+            type: 'POST',
+            url : "add_ok.php",
+            contentType : "application/x-www-form-urlencoded", //必须有
+            data : {"name":name,"type":type,"price":price,"remarks":remarks,"place":place,"firm":firm},
+            dataType:'JSON', 
+            success : function(data) {
+                layer.msg(data['msg']);
+                parent.location.reload(true);
+                parent.layer.close(index);
+                // layer.msg(data['msg'], {icon: 1,time:3000});
+            },
+            error : function(err) {
+                alert("添加失败！get  "+err);
+            }
+        });
+    
+}
+function cancel(){
+    parent.layer.close(index);
+}
+</script>
