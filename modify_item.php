@@ -22,7 +22,7 @@
                 width: 100%;
             }
             .btn{
-                margin-top: 20px;
+                margin-top: 10px;
             }
         </style>
     </head>
@@ -35,7 +35,7 @@
     $item=mysql_fetch_assoc($sql);
     ?>
             <div class="row">
-                <h1 style="text-align:center;">添加新配件信息</h1>
+                <h1 style="text-align:center;">修改配件信息</h1>
             </div>
             <input type="hidden" id="id" class="form-control"  maxlength="30" value="<?php echo $item['id'] ?>">
             <div class="row">
